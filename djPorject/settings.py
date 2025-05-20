@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'djPorject.wsgi.application'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangoChallenge',
-        'USER': os.environ.get('user'),
-        'PASSWORD': os.environ.get('password'),
+        'NAME': 'djangochallenge',
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': 'localhost',  
         'PORT': '3306',       
     }
