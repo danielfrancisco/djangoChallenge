@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from .views import PlanetsListCreateView, PlanetsView
 
 urlpatterns = [
-    path('', views.get_data, name='get_data'),
+    path('planets/', PlanetsListCreateView.as_view(), name='planets-list-create'),
+    path('planets/<int:pk>/', PlanetsView.as_view(), name='planets-detail'),
 ]

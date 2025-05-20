@@ -1,7 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-import requests
+from rest_framework import generics
+from .models import Planets
+from .serializers import PlanetsSerializer
 
-def get_data(request):
-   return JsonResponse({'data':'hello world!'})
-    
+class PlanetsListCreateView(generics.ListCreateAPIView):
+    queryset = Planets.objects.all()
+    serializer_class = PlanetsSerializer
+
+class PlanetsView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Planets.objects.all()
+    serializer_class = PlanetsSerializer
